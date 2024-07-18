@@ -1,3 +1,8 @@
+
+
+
+// Beginning of memory game
+
 const cards = document.querySelectorAll(".card");
 const displayText = document.querySelector(".display-text");
 
@@ -92,18 +97,21 @@ const shuffle = () => {
 };
 
 
-//shuffle();
+shuffle();
 
 cards.forEach(card => card.addEventListener("click", flipCard));
 
+// End of memory game
+
+
+// Beginning of form
+
+
+const $form = getElementbyID("subscription-form")
+
+
+// End of form
 
 
 
-// IIFE: Immediately invoked function element
 
-// (function shuffle() {
-//     cards.forEach(card => {
-//         let randomOrder = Math.floor(Math.random() * 12);
-//         card.style.order = randomOrder;
-//     });
-// })();
