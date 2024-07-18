@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>S'inscrire - Jeu Memory ENI</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/sign-up-style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>ENI Memory - S'inscrire</h1>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Accueil</a></li>
+          <li><a href="/sign-up.html">S'inscrire</a></li>
+          <li><a href="/sign-in.html">Se connecter</a></li>
+          <li><a href="/profile.html">Profil</a></li>
+          <li><a href="/play.html">Jouer</a></li>
+        </ul>
+      </nav>
+      <section>
+        <form action="" method="post">
+          <fieldset>
+            <legend>Inscrivez-vous</legend>
+            <div>
+              <label for="pseudo"
+                >Nom d'utilisateur
+                <img src="/images/check.svg" width="24px" alt=""
+              /></label>
+              <input required type="text" name="pseudo" id="pseudo" />
+            </div>
+            <div>
+              <label for="email"
+                >Entrez votre e-mail<img
+                  src="/images/check.svg"
+                  width="24px"
+                  alt=""
+              /></label>
+              <input required type="email" name="email" id="email" />
+            </div>
+            <div>
+              <label for="password"
+                >Mot de passe<img src="/images/check.svg" width="24px" alt=""
+              /></label>
+              <input required type="password" name="password" id="password" />
+            </div>
+            <div class="password-security-levels">
+              <div class="weak">
+                <div class="orange-indicator indicator"></div>
+                <span>faible</span>
+              </div>
+              <div class="medium">
+                <div class="yellow-indicator indicator"></div>
+                <span>moyen</span>
+              </div>
+              <div class="strong">
+                <div class="green-indicator indicator"></div>
+                <span>fort</span>
+              </div>
+            </div>
+            <div>
+              <label for="confirm-password"
+                >Confirmez votre mot de passe<img
+                  src="/images/check.svg"
+                  width="24px"
+                  alt=""
+              /></label>
+              <input
+                required
+                type="password"
+                name="confirm-password"
+                id="confirm-password"
+              />
+            </div>
+            <div class="buttons">
+              <button type="submit">Création du compte</button>
+              <button type="reset">Annuler</button>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+
+legend {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.password-security-levels {
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+}
+
+.password-security-levels > div {
+    align-items: center;
+}
+
+.indicator {
+    height: 8px;
+    width: 100px;
+}
+
+.green-indicator {
+    background-color: green;
+}
+
+.yellow-indicator {
+    background-color: yellow;
+}
+
+.orange-indicator {
+    background-color: orange;
+}
+
