@@ -21,6 +21,7 @@ function flipCard() {
 
   this.classList.add("flip");
 
+  
   if (!isFlippedCard) {
     isFlippedCard = true;
     firstCard = this;
@@ -91,7 +92,7 @@ const shuffle = () => {
 };
 
 
-shuffle();
+//shuffle();
 
 cards.forEach(card => card.addEventListener("click", flipCard));
 

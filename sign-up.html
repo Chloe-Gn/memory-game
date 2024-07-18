@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>S'inscrire - Jeu Memory ENI</title>
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/sign-up-style.css" />
   </head>
   <body>
     <div class="context">
@@ -21,31 +20,33 @@
       </nav>
       <section>
         <form action="" method="post">
-          <fieldset>
-            <legend>Inscrivez-vous</legend>
-            <div>
-              <label for="pseudo"
-                >Nom d'utilisateur
-                <img src="/images/check.svg" width="24px" alt=""
-              /></label>
-              <input required type="text" name="pseudo" id="pseudo" />
-            </div>
-            <div>
-              <label for="email"
-                >Entrez votre e-mail<img
-                  src="/images/check.svg"
-                  width="24px"
-                  alt=""
-              /></label>
-              <input required type="email" name="email" id="email" />
-            </div>
-            <div>
-              <label for="password"
-                >Mot de passe<img src="/images/check.svg" width="24px" alt=""
-              /></label>
-              <input required type="password" name="password" id="password" />
-            </div>
-            <div class="password-security-levels">
+          <legend class="legend">Inscrivez-vous</legend>
+          <div>
+            <label for="pseudo"
+              >Nom d'utilisateur
+              <img class="status" src="/images/check.svg" alt=""
+            /></label>
+            <input required type="text" name="pseudo" id="pseudo" />
+            <p class="message-below-input"></p>
+          </div>
+          <div>
+            <label for="email"
+              >Entrez votre e-mail<img
+                src="/images/check.svg"
+                class="status"
+                alt=""
+            /></label>
+            <input required type="email" name="email" id="email" />
+            <p class="message-below-input"></p>
+          </div>
+          <div>
+            <label for="password"
+              >Mot de passe<img src="/images/check.svg" class="status" alt=""
+            /></label>
+            <input required type="password" name="password" id="password" />
+            <p class="message-below-input"></p>
+          </div>
+          <!-- <div class="password-security-levels">
               <div class="weak">
                 <div class="orange-indicator indicator"></div>
                 <span>faible</span>
@@ -58,26 +59,27 @@
                 <div class="green-indicator indicator"></div>
                 <span>fort</span>
               </div>
-            </div>
-            <div>
-              <label for="confirm-password"
-                >Confirmez votre mot de passe<img
-                  src="/images/check.svg"
-                  width="24px"
-                  alt=""
-              /></label>
-              <input
-                required
-                type="password"
-                name="confirm-password"
-                id="confirm-password"
-              />
-            </div>
-            <div class="buttons">
-              <button type="submit">Création du compte</button>
-              <button type="reset">Annuler</button>
-            </div>
-          </fieldset>
+            </div> -->
+          <div>
+            <label for="confirm-password"
+              >Confirmez votre mot de passe<img
+                src="/images/check.svg"
+                class="status"
+                alt=""
+            /></label>
+          
+            <input
+              required
+              type="password"
+              name="confirm-password"
+              id="confirm-password"
+            />
+            <p class="message-below-input"></p>
+          </div>
+          <div class="buttons">
+            <button type="submit">Création du compte</button>
+            <button type="reset">Annuler</button>
+          </div>
         </form>
       </section>
     </div>
