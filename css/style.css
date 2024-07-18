@@ -5,7 +5,7 @@
 }
 
 
-body, main {
+body, context {
     display: flex;
     justify-content: center;;
     align-items: flex-start;
@@ -17,7 +17,7 @@ body, main {
 }
 
 
-main {
+.context {
     flex-direction: column;
     width: 80vw;
     max-width: 800px;
@@ -75,7 +75,7 @@ p, ul {
     font-size: 1.1rem;
 }
 
-input {
+/* input {
     max-width: 300px;
     border-radius: 50px;
     border: none;
@@ -121,4 +121,4 @@ button:hover {
 .buttons {
     width: fit-content;
     display: block;
-}
+} */
