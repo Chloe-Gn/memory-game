@@ -1,4 +1,5 @@
 const cards = document.querySelectorAll(".card");
+const displayText = document.querySelector(".display-text");
 
 document.body.onkeyup = function(e){
     if(e.keyCode == 32){
@@ -7,7 +8,7 @@ document.body.onkeyup = function(e){
   };
 
   const numberOfAttempts = document.getElementById("number-of-attempts");
-  
+  let numberOFMatches = 0;
 
 let isFlippedCard = false;
 let firstCard, secondCard;
@@ -17,20 +18,23 @@ let count = 0;
 function flipCard() {
   if (lockBoard) return;
   if (this === firstCard) return;
+
   this.classList.add("flip");
+
   if (!isFlippedCard) {
     isFlippedCard = true;
     firstCard = this;
-    console.log("I am first card: " + firstCard)
     return;
   } else {
     secondCard = this;
-    console.log("I am second card: " + secondCard)
     checkForMatch();
-    console.log("I am first card: " + firstCard)
-    console.log("I am second card: " + secondCard);
     count = incrementCount();
     displayCount();
+  }
+
+
+  if (numberOFMatches === 6) {
+     displayYouWon();
   }
 }
 
@@ -38,14 +42,19 @@ function flipCard() {
 const displayCount = () => {
   setTimeout(() => {
     numberOfAttempts.innerHTML = count;
-   }, 500);
+   }, 400);
   }
 
+
+const displayYouWon = () => {
+  setTimeout(() => {
+    displayText.insertAdjacentText("beforeend"," Tu as gagné !");
+  },400);
+}
 
 const incrementCount = () => {
     return ++count ;
   }
-
 
 
 const checkForMatch = () => {
@@ -65,14 +74,13 @@ const unflipCards = () => {
 function disableCards () {
   firstCard.removeEventListener("click", flipCard);
   secondCard.removeEventListener("click", flipCard);
+  numberOFMatches ++;
   resetBoard();
 };
 
 const resetBoard = () => {
-  isFlippedCard = false;
-  lockBoard = false;
-  firstCard = null;
-  secondCard = null;
+  [isFlippedCard, lockBoard] = [false, false];
+  [firstCard, secondCard] = [null, null];
 };
 
 const shuffle = () => {
@@ -82,7 +90,13 @@ const shuffle = () => {
   });
 };
 
+
 shuffle();
+
+cards.forEach(card => card.addEventListener("click", flipCard));
+
+
+
 
 // IIFE: Immediately invoked function element
 
@@ -92,6 +106,3 @@ shuffle();
 //         card.style.order = randomOrder;
 //     });
 // })();
-
-cards.forEach(card => card.addEventListener("click", flipCard));
-
