@@ -109,6 +109,74 @@ cards.forEach(card => card.addEventListener("click", flipCard));
 
 const $form = getElementbyID("subscription-form")
 
+function verifyFormInputs(event) {
+  const errors = []
+  const user = {}
+  
+  event.preventDefault()
+
+  const $inputs = event.target.querySelectorAll('input')
+
+ 
+  $inputs.forEach(input => {
+      switch (input.id) {
+          case "email":
+              console.log("email");
+              if (!checkEmail(input.value)) errors.push([input.id, "L'email n'est pas valide"])
+              else user.email = input.value
+              break;
+          case "password":
+              console.log("password");
+               if (!checkPassword(input.value)) errors.push([input.id, "motdepasse n'est pas valide"])
+               else user.password = input.value
+              break;
+          case "birthDate":
+              console.log("birthDate");
+               if (!checkDate(input.value)) errors.push([input.id, "birthDate n'est pas valide"])
+               else user.birthDate = input.value
+              break;
+          default:
+              break;
+      }
+  });
+
+
+  if (errors.length > 0) {
+  
+      errors.forEach(error => {
+         
+          const $displayErrorTarget = document.getElementById(`erreur-${error[0]}`)
+          $displayErrorTarget.innerHTML = ''
+          $displayErrorTarget.innerHTML = error[1]
+      })
+  } else {
+      
+      saveUser(user)
+      document.getElementById('message-succes').textContent = "User saved"
+  }
+}
+
+
+
+function checkEmail(email) {
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
+  return emailPattern.test(email);
+}
+
+function checkPassword(password) {
+  const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&!*])[A-Za-z\d@#$%^&!*]{8,}$/;
+  return passwordPattern.test(password);
+}
+
+function checkDate(date) {
+  
+  const dateObject = new Date(date);
+  return !Number.isNaN(dateObject.getTime());
+}
+
+function checkNumber(number) {
+  return !Number.isNaN(number)
+}
 
 // End of form
 

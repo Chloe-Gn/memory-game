@@ -27,7 +27,7 @@
               <img class="status" src="/images/check.svg" alt=""
             /></label>
             <input required type="text" name="pseudo" id="pseudo" />
-            <p class="message-below-input"></p>
+            <div class="message error" id="pseudo-error"></div>
           </div>
           <div>
             <label for="email"
@@ -37,14 +37,14 @@
                 alt=""
             /></label>
             <input required type="email" name="email" id="email" />
-            <p class="message-below-input"></p>
+            <div class="message error" id="email-error"></div>
           </div>
           <div>
             <label for="password"
               >Mot de passe<img src="/images/check.svg" class="status" alt=""
             /></label>
             <input required type="password" name="password" id="password" />
-            <p class="message-below-input"></p>
+            <p class="message error" id="password-error"></p>
           </div>
           <!-- <div class="password-security-levels">
               <div class="weak">
