@@ -19,14 +19,20 @@
         </ul>
       </nav>
       <section>
-        <form id="subscription-form">
+        <form id="subscription-form" novalidate>
           <legend class="legend">Inscrivez-vous</legend>
           <div>
             <label for="pseudo"
               >Nom d'utilisateur
               <img class="status" src="/images/check.svg" alt=""
             /></label>
-            <input required type="text" name="pseudo" id="pseudo" />
+            <input
+              autocomplete="off"
+              required
+              type="text"
+              name="pseudo"
+              id="pseudo"
+            />
             <div class="message error" id="pseudo-error"></div>
           </div>
           <div>
@@ -36,15 +42,27 @@
                 class="status"
                 alt=""
             /></label>
-            <input required type="email" name="email" id="email" />
+            <input
+              autocomplete="off"
+              required
+              type="email"
+              name="email"
+              id="email"
+            />
             <div class="message error" id="email-error"></div>
           </div>
           <div>
             <label for="password"
               >Mot de passe<img src="/images/check.svg" class="status" alt=""
             /></label>
-            <input required type="password" name="password" id="password" />
-            <p class="message error" id="password-error"></p>
+            <input
+              autocomplete="off"
+              required
+              type="password"
+              name="password"
+              id="password"
+            />
+            <p class="message error" id="password-error">dbdfswgfdgsdf</p>
           </div>
           <!-- <div class="password-security-levels">
               <div class="weak">
@@ -61,20 +79,21 @@
               </div>
             </div> -->
           <div>
-            <label for="confirm-password"
+            <label for="password-again"
               >Confirmez votre mot de passe<img
                 src="/images/check.svg"
                 class="status"
                 alt=""
             /></label>
-          
+
             <input
+              autocomplete="off"
               required
               type="password"
-              name="confirm-password"
-              id="confirm-password"
+              name="password-again"
+              id="password-again"
             />
-            <p class="message-below-input"></p>
+            <p class="message error" id="password-again-error">dbdfswgfdgsdf</p>
           </div>
           <div class="buttons">
             <button type="submit">Création du compte</button>
@@ -83,5 +102,6 @@
         </form>
       </section>
     </div>
+    <script src="/js/script.js"></script>
   </body>
 </html>
